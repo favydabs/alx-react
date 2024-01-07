@@ -1,5 +1,5 @@
 const path = require('path')
-// const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
+// const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
     mode: 'production',
@@ -32,16 +32,9 @@ filename: 'bundle.js'
         ],
     },
 };
- 
-// plugins: [
-//     new ImageMinimizerPlugin({
-//       minimizerOptions: {
-//         plugins: [
-//           ['jpegtran', { progressive: true }],
-//           ['optipng', { optimizationLevel: 5 }],
-//           ['svgo', { plugins: [{ removeViewBox: false }] }],
-//         ],
-//       },
-//     }),
-//   ],
+//     plugins: [
+//         new HtmlWebpackPlugin ({
+//             template: 'public/index.html'
+//         }),
+//     ]
 // };
