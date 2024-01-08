@@ -5,23 +5,22 @@ import "./App.css";
 function App() {
   return (
     <div>
-      <div className="App-header">
-        <img src={Holberton} alt="Holberton Logo" />
+      <div className="div-header">
+        <img src={Holberton} alt="Holberton Logo" className="App-header"/>
         <h1>School dashboard</h1>
       </div>
 
-      <div className="App-body">
-        <p>Login to access the full dashboard</p>
-        <label typeof="email">email</label>
+      <div className="div-body">
+        <p className="App-body">Login to access the full dashboard</p>
+        <label typeof="email">Email:</label>
         <input type="email" id="enter email" />
-        <label typeof="password">password</label>
+        <label typeof="password">Password:</label>
         <input type="password" id="password" />
         <button>OK</button>
       </div>
 
-      <div className="App-footer">
-        <p>Current year: {getFullYear()}</p>
-        <p>Footer Copy: {getFooterCopy(true)}</p>
+      <div className="div-footer">
+        <p className="App-footer">Current year: {getFullYear()}-{getFooterCopy(true)}</p>
       </div>
     </div>
   );
