@@ -1,0 +1,14 @@
+[data-notification-type="default"] {
+  color: blue;
+}
+
+[data-urgent],
+[data-notification-type="urgent"] {
+  color: red;
+}
+.notifications-box{
+  border-bottom: 4px dotted rgb(243, 108, 108);
+  border-top: 4px dotted rgb(243, 108, 108);
+  border-left: 4px dotted rgb(243, 108, 108);
+  border-right: 4px dotted rgb(243, 108, 108);
+}
