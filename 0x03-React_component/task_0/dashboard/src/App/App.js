@@ -1,32 +1,50 @@
 import React, { Component } from "react";
-import Holberton from "../assets/Holberton Logo.jpg";
-import { getFullYear, getFooterCopy } from "../utils/utils";
+import Notifications from "../Notifications/Notifications";
+import Header from "../Header/Header";
+import Login from "../Login/Login";
+import Footer from "../Footer/Footer";
+import CourseList from "../CourseList/CourseList";
+import PropTypes from "prop-types";
 import "./App.css";
+import { getLatestNotification } from "../utils/utils";
+
+const listCourses = [
+  { id: 1, name: "ES6", credit: 60 },
+  { id: 2, name: "Webpack", credit: 20 },
+  { id: 3, name: "React", credit: 40 },
+];
+
+const listNotifications = [
+  { id: 1, type: "default", value: "New course available" },
+  { id: 2, type: "urgent", value: "New resume available" },
+  { id: 3, type: "urgent", html: getLatestNotification() },
+];
 
 class App extends Component {
+  static defaultProps = {
+    isLoggedIn: false,
+  };
+
+  static propTypes = {
+    isLoggedIn: PropTypes.bool,
+  };
+
   render() {
     return (
-      <div>
-        <div className="div-header">
-          <img src={Holberton} alt="Holberton Logo" className="App-header" />
-          <h1>School dashboard</h1>
+      <>
+        <div className="App">
+          <div className="heading-section">
+            <Notifications listNotifications={listNotifications} />
+            <Header />
+          </div>
+          {this.props.isLoggedIn ? (
+            <CourseList listCourses={listCourses} />
+          ) : (
+            <Login />
+          )}
+          <Footer />
         </div>
-
-        <div className="div-body">
-          <p className="App-body">Login to access the full dashboard</p>
-          <label typeof="email">Email:</label>
-          <input type="email" id="enter email" />
-          <label typeof="password">Password:</label>
-          <input type="password" id="password" />
-          <button>OK</button>
-        </div>
-
-        <div className="div-footer">
-          <p className="App-footer">
-            Current year: {getFullYear()}-{getFooterCopy(true)}
-          </p>
-        </div>
-      </div>
+      </>
     );
   }
 }
