@@ -1,4 +1,4 @@
-import Holberton from "./Holberton Logo.jpg";
+import holberton from "./holberton-logo.jpg";
 import { getFullYear, getFooterCopy} from "./utils"
 import "./App.css";
 
@@ -6,7 +6,7 @@ function App() {
   return (
     <div>
         <div className="App-header">
-          <img src={Holberton}  alt="Holberton Logo" />
+          <img src={holberton}  alt="Holberton Logo" />
           <h1>School dashboard</h1>
         </div>
 
