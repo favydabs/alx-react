@@ -12,6 +12,7 @@ export default function Header() {
 };
 const styles = StyleSheet.create({
   "App-header": {
+   small: "@media screen and (max-width:350px)",
     fontSize: "1.4rem",
     color: "#e0354b",
     display: "flex",
